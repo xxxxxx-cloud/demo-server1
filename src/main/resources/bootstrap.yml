@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: demo-server1
+  cloud:
+    nacos:
+      discovery:
+        serverAddr: 127.0.0.1:8848
+      config:
+        serverAddr: 127.0.0.1:8848
+        extConfig[0]:
+          dataId: common-feign.yaml
+          refresh: true
+server:
+  port: 20001
+
+
+
