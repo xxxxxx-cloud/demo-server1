@@ -5,11 +5,16 @@ spring:
     nacos:
       discovery:
         serverAddr: 127.0.0.1:8848
+        namespace: dev
       config:
         serverAddr: 127.0.0.1:8848
-        extConfig[0]:
-          dataId: common-feign.yaml
-          refresh: true
+        fileExtension: yaml
+        extConfig:
+          - dataId: common-feign.yaml
+            refresh: true
+          - dataId: springboot-health.yaml
+            refresh: true
+        namespace: dev
 server:
   port: 20001
 
