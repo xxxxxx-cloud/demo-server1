@@ -12,8 +12,16 @@ spring:
         extConfig:
           - dataId: common-feign.yaml
             refresh: true
-          - dataId: springboot-health.yaml
+          - dataId: common-health.yaml
             refresh: true
+          - dataId: common-database.yaml
+            refresh: true
+          - dataId: common-redis.yaml
+            refresh: true
+          - dataId: common-mq.yaml
+            refresh: true
+
+
         namespace: dev
 server:
   port: 20001
