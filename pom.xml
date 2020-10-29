@@ -1,29 +1,73 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.xxxxx.demo.server1</groupId>
+    <artifactId>demo-server1</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
     <parent>
         <groupId>com.xxxxx.parent</groupId>
         <artifactId>xxxxx-spring-cloud</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <groupId>com.xxxxx.demo</groupId>
-    <artifactId>demo-server1</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <name>demo-server1</name>
-    <packaging>jar</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.xxxxx.common.spring</groupId>
-            <artifactId>common-spring</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>demo-server1-web</module>
+        <module>demo-server1-service</module>
+        <module>demo-server1-rpc</module>
+        <module>demo-server1-pojo</module>
+    </modules>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.xxxxx.demo.server1.web</groupId>
+                <artifactId>demo-server1-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xxxxx.demo.server1.service</groupId>
+                <artifactId>demo-server1-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xxxxx.demo.server1.rpc</groupId>
+                <artifactId>demo-server1-rpc</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xxxxx.demo.server1.pojo</groupId>
+                <artifactId>demo-server1-pojo</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xxxxx.common.spring</groupId>
+                <artifactId>common-spring</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.xxxxx.DemoServer1WebApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 
