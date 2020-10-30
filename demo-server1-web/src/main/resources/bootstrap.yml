@@ -20,8 +20,10 @@ spring:
             refresh: true
           - dataId: common-mq.yaml
             refresh: true
+          - dataId: common-xxljob.yaml
+            refresh: true
+          - dataId: common-lcn.yaml
+            refresh: true
         namespace: dev
-server:
-  port: 20002
 
 

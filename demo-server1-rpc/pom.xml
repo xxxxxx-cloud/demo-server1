@@ -16,5 +16,9 @@
             <groupId>com.xxxxx.demo.server1.pojo</groupId>
             <artifactId>demo-server1-pojo</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.xxxxx.demo.server2.rpc</groupId>
+            <artifactId>demo-server2-rpc</artifactId>
+        </dependency>
     </dependencies>
 </project>

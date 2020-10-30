@@ -10,7 +10,7 @@
 
     <parent>
         <groupId>com.xxxxx.parent</groupId>
-        <artifactId>xxxxx-spring-cloud</artifactId>
+        <artifactId>xxxxx-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
@@ -46,28 +46,15 @@
             <dependency>
                 <groupId>com.xxxxx.common.spring</groupId>
                 <artifactId>common-spring</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xxxxx.demo.server2.rpc</groupId>
+                <artifactId>demo-server2-rpc</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.xxxxx.DemoServer1WebApplication</mainClass>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>
 

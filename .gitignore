@@ -5,3 +5,4 @@ eureka-server.iml
 *.bak
 *.iml
 /log
+.txlcn
