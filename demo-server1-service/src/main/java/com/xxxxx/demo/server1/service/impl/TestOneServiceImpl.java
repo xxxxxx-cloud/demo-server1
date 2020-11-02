@@ -35,7 +35,7 @@ public class TestOneServiceImpl implements TestOneService {
         t2.setId(UUID.randomUUID().toString().replaceAll("-", ""));
         t2.setValue(UUID.randomUUID().toString().replaceAll("-", ""));
         testTwoRpc.sendTestTwo(t2);
-
+        testOneMapper.findAll();
         TestOneVO t = new TestOneVO();
         t.setId(UUID.randomUUID().toString().replaceAll("-", ""));
         t.setValue(UUID.randomUUID().toString().replaceAll("-", ""));
